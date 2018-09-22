@@ -1,11 +1,20 @@
 # LearnPhoenix
 
+First install Homebrew if you don't already have it then install these: 
+* `brew install elixir`
+* `brew install postgresql`
+* `brew install node`
+
+Install Phoenix:
+* mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+* mix local.hex
+* createuser -d postgres
+
 To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * cd learn_phoenix
+  * Not sure if you need to do `mix ecto.create` so try the server first at the bottom.
+  * mix phx.server
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
