@@ -1,6 +1,6 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome %{name}!", name: "Ian" %></h2>
-  <p class="lead">If you see this Andy<br />That means it is working</p>
+  <h2><%= gettext "Thanks %{name}!", name: "Ian" %></h2>
+  <p class="lead">Yes I saw it</p>
 </div>
 
 <div class="row marketing">
