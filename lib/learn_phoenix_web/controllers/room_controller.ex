@@ -14,13 +14,18 @@ defmodule LearnPhoenixWeb.RoomController do
 
 	def create(conn, %{"room" => room_params}) do
 		case Conversation.create_room(room_params) do
-			{:ok, room} ->
-			  conn
-			  |> put_flash(:info, "Room created successfully.")
-			  |> redirect(to: room_path(conn, :index))
+		{:ok, room} ->
+		  conn
+		  |> put_flash(:info, "Room created successfully.")
+		  |> redirect(to: room_path(conn, :index))
 
-			{:error, %Ecto.Changeset{} = changeset} ->
-			  render(conn, "new.html", changeset: changeset)
-			end
+		{:error, %Ecto.Changeset{} = changeset} ->
+		  render(conn, "new.html", changeset: changeset)
 		end
+	end
+
+	def show(conn, %{"id" => id}) do
+		room = Conversation.get_room!(id)
+  		render(conn, "show.html", room: room)
+	end
 end
