@@ -3,6 +3,7 @@ defmodule LearnPhoenix.Repo.Migrations.CreateRooms do
 
   def change do
     create table(:rooms) do
+      create unique_index(:rooms, [:name])
       add :name, :string, null: false, size: 25
       add :description, :string
       add :topic, :string, size: 100
